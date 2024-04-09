@@ -1,0 +1,6 @@
+@ReProject.WebApi_HostAddress = http://localhost:5290
+
+GET {{ReProject.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
