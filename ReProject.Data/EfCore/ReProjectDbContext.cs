@@ -22,7 +22,7 @@ public class ReProjectDbContext : DbContext
     //dbsetler gelecek
     public DbSet<Category> Categories { get; set; }
     public DbSet<User> Users { get; set; }
-    public DbSet<Attribute> Attributes { get; set; }
+    //public DbSet<Attribute> Attributes { get; set; }
     public DbSet<Advert> Adverts { get; set; }
 
 
@@ -35,7 +35,19 @@ public class ReProjectDbContext : DbContext
             b.HasKey(k => k.Id);
             b.Property(p => p.Name).IsRequired();
             
-        }); 
+        });
+
+        modelBuilder.Entity<User>(b =>
+        {
+            b.ToTable("Users");
+            b.HasKey(k => k.Id);
+        });
+
+        modelBuilder.Entity<Advert>(b =>
+        {
+            b.ToTable("Adverts");
+            b.HasKey(k => k.Id);
+        });
     }
 
    
