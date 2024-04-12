@@ -39,6 +39,7 @@ public class ReProjectDbContext : DbContext
 
         modelBuilder.Entity<User>(b =>
         {
+
             b.ToTable("Users");
             b.HasKey(k => k.Id);
         });
